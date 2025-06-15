@@ -1,34 +1,111 @@
 /* Add your CSS here */
 
-/* Hero section with Intel-branded blue background */
+/* --- HERO SECTION: Make it pop and more stylized --- */
 .hero {
-  background-color: #0071c5; /* Intel blue */
-  color: #fff; /* White text for good contrast */
-  text-align: center; /* Center all content */
-  padding: 60px 20px; /* Space around the content */
+  background: linear-gradient(120deg, #0071c5 60%, #00a6e0 100%);
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px 70px 20px; /* More space for impact */
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 60, 113, 0.18); /* Soft shadow for depth */
+  border-radius: 0 0 32px 32px; /* Rounded bottom corners */
+  overflow: hidden;
+}
+
+/* Add a subtle Intel circuit pattern or abstract effect (optional for beginners) */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/cubes.png');
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Intel logo as text styling */
+.intel-logo-text {
+  display: inline-block;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif; /* Intel-like font */
+  font-weight: 700;
+  font-size: 2.2em;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 2;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin-top: 0;
+}
+
+/* Container for the dot and the word "Intel" together */
+.intel-dot-container {
+  display: inline-block;
   position: relative;
 }
 
-/* Intel logo styling */
-.intel-logo {
-  width: 120px;
-  margin-bottom: 20px;
-}
-
-/* Headline styling */
-.hero-headline {
-  font-size: 2.2em;
-  margin: 10px 0;
+/* Style for the blue dot above the "I" in "Intel" */
+.intel-i-dot {
+  color: #00a6e0; /* Bright blue for the dot */
+  font-size: 0.55em; /* Make the dot smaller */
+  position: absolute;
+  left: 0.18em; /* Adjust to center above the "I" */
+  top: -0.7em;  /* Adjust to sit above the "I" */
   font-weight: bold;
+  pointer-events: none;
+  line-height: 1;
 }
 
-/* Subheading styling */
+/* Style for the "I" */
+.intel-logo-text .intel-i {
+  position: relative;
+  display: block;
+  text-align: center;
+  line-height: 1;
+}
+
+/* Remove the old image logo style */
+.intel-logo {
+  display: none;
+}
+
+/* Headline styling: bigger, bolder, with a glow */
+.hero-headline {
+  font-size: 2.5em;
+  margin: 18px 0 10px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px rgba(0, 60, 113, 0.18), 0 1px 0 #fff2;
+  position: relative;
+  z-index: 2;
+}
+
+/* Subheading styling: softer, but still clear */
 .hero-subheading {
-  font-size: 1.1em;
-  margin-top: 10px;
-  max-width: 400px;
+  font-size: 1.2em;
+  margin-top: 12px;
+  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.5;
+  color: #eaf6fb;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 8px rgba(0, 60, 113, 0.10);
+}
+
+/* Add a subtle glowing line under the headline */
+.hero-headline::after {
+  content: "";
+  display: block;
+  margin: 18px auto 0 auto;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #fff 0%, #00a6e0 100%);
+  opacity: 0.7;
 }
 
 /* Header section styling */
@@ -198,19 +275,24 @@ header p {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 600px) {
   .hero {
-    padding: 30px 10px;
+    padding: 36px 8px 32px 8px;
+    border-radius: 0 0 18px 18px;
   }
   .intel-logo {
     width: 80px;
+    padding: 4px 8px;
   }
   .hero-headline {
     font-size: 1.3em;
   }
   .hero-subheading {
     font-size: 1em;
+    max-width: 98vw;
   }
-  header h1 {
-    font-size: 1.2em;
+  .hero-headline::after {
+    width: 36px;
+    height: 3px;
+    margin-top: 10px;
   }
 }
 

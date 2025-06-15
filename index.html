@@ -5,37 +5,32 @@
   <title>Intel Sustainability Hero Section</title>
   <!-- Link to the CSS file -->
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for Intel-like font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Hero Section Start -->
   <section class="hero">
-    <!-- Intel Logo (uses Intel.png from your project folder) -->
-    <img src="Intel.png" alt="Intel Logo" class="intel-logo">
+    <!-- Intel Logo as Text with dot centered above I (now as one word) -->
+    <span class="intel-logo-text">
+      <!-- The dot is absolutely positioned above the I in "Intel" -->
+      <span class="intel-dot-container">
+        <span class="intel-i-dot">•</span>
+        Intel
+      </span>
+    </span>
     <!-- Headline -->
-    <h1 class="hero-headline">Building a Sustainable Future</h1>
+    <h1 class="hero-headline">Sustainability Through the Ages</h1>
     <!-- Subheading -->
-    <p class="hero-subheading">Intel is committed to innovation and sustainability for a better tomorrow.</p>
+    <p class="hero-subheading">
+      Explore Intel's journey through time, discovering how our commitment
+      to innovation has shaped a more sustainable future for technology 
+      and our planet.
+    </p>
   </section>
   <!-- Hero Section End -->
 
-  <!-- Header Section -->
-  <header>
-    <div>
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
-    </div>
-  </header>
-
   <!-- Timeline Cards Section -->
-  <!-- Added class names for styling and flexbox -->
   <section class="timeline-section">
     <div class="timeline-container">
       <!-- Card 1: 1968 -->
@@ -149,7 +144,7 @@
   </section>
   <p class="timeline-instructions">Scroll to view timeline | Hover over cards to learn more!</p>
 
-  <!-- Replace your previous script with this one at the end of your HTML file -->
+  <!-- Timeline scroll script -->
   <script>
     // Wait until the page is loaded
     window.addEventListener('DOMContentLoaded', function() {
