@@ -147,9 +147,12 @@ header p {
   /* The following is for visual clarity, not required for scroll behavior */
   scrollbar-width: thin;
   scrollbar-color: #0071c5 #eaf1f8;
+
+  /* --- Smooth horizontal scroll snapping --- */
+  scroll-snap-type: x mandatory; /* Enable horizontal snap */
 }
 
-/* Timeline card styling */
+/* Each timeline card will snap to the start of the container */
 .timeline-card {
   background-color: #fff;
   border: 1px solid #b6c9db;
@@ -161,6 +164,33 @@ header p {
   padding: 16px;
   text-align: center;
   color: #003c71;
+
+  /* --- Snap each card to the start --- */
+  scroll-snap-align: start;
+}
+
+/* Make sure all timeline card images, including wind.jpg, fit the card and display properly */
+.timeline-card img {
+  width: 100%;         /* Image fills the card width */
+  height: 140px;       /* Fixed height for all images */
+  object-fit: cover;   /* Crop and center image to fill area */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Make timeline cards more dynamic and obvious on hover */
+.timeline-card {
+  transition: 
+    transform 0.35s cubic-bezier(.4,2,.6,1), /* More dramatic scaling */
+    box-shadow 0.35s cubic-bezier(.4,2,.6,1), /* More dramatic shadow */
+    opacity 0.3s ease;
+}
+
+/* When you hover over a timeline card, scale it up more and add a much stronger shadow */
+.timeline-card:hover {
+  transform: scale(1.12) rotate(-2deg); /* Larger scale and slight rotation */
+  box-shadow: 0 16px 40px rgba(0, 60, 113, 0.28), 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 10;
 }
 
 .timeline-card h2 {
@@ -171,13 +201,6 @@ header p {
 
 .timeline-card h3 {
   font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-.timeline-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
   margin-bottom: 10px;
 }
 
